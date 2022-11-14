@@ -1,0 +1,159 @@
+:host ::ng-deep .dataTables_wrapper .dataTables_length {
+    float: right;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin-top: 15px;
+}
+
+table#tableDemandeType.footable > tbody > tr > td, table.footable > tbody > tr > th {
+    display: table-cell !important;
+}
+
+.tgl-ios:checked+.tgl-btn {
+    background: #004bbb;
+}
+
+label.tgl-btn.legend-btn-label {
+    word-wrap: normal;
+}
+
+.tgl-ios+.tgl-btn {
+    background: #bdcad0;
+    border-radius: 2em;
+    padding: 2px;
+    transition: all .4s ease;
+    border: 1px solid #e8eae9;
+}
+.tgl+.tgl-btn {
+    margin-top: 5px;
+    outline: 0;
+    width: 4.5em;
+    height: 2.2em;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tgl+.tgl-btn:before {
+    content: "";
+    display: block;
+    font-size: 10px;
+    color: #fff;
+    float: right;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.tgl+.tgl-btn:after, .tgl+.tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 1.8em;
+    height: 1.8em;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.tgl-ios+.tgl-btn:after {
+    border-radius: 2em;
+    background: #fbfbfb;
+    transition: left .3s cubic-bezier(0.175,0.885,0.32,1.275),padding .3s ease,margin .3s ease;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 4px 0 rgb(0 0 0 / 8%);
+}
+
+.tgl+.tgl-btn:after {
+    left: 0;
+}
+
+.tgl:checked+.tgl-btn:before {
+    content: "";
+    float: left;
+    margin-left: 5px;
+}
+
+.tgl:checked+.tgl-btn:after {
+    left: 2.2em;
+}
+
+.tgl:checked + .tgl-btn:before {
+    content: "OUI" !important;
+}
+
+.tgl +  .tgl-btn:before {
+    content: "NON" !important;
+}
+
+.cdk-overlay-pane {
+    width: unset !important;
+}
+
+:host ::ng-deep .dataTables_paginate .paginate_button {
+    outline: 0;
+    background: unset;
+    box-shadow: unset;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
+/*a.paginate_button.current{*/
+/*    background-color: #0368a7 !important;*/
+/*    border-color: #0368a7 !important;*/
+/*color:white!important;*/
+/*}*/
+
+.dataTables_paginate .paging_simple_numbers{
+    float: right !important;
+}
+.table-bordered{
+    border: none;
+}
+.table-bordered>thead>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>tfoot>tr>td{
+    border: none;
+}
+
+table.dataTable thead .sorting_asc {
+    /*background-image: url("/o/Dynamic-ChangeMail-portlet/css/sort_asc.png") !important;*/
+    background-image:none!important;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+table.dataTable thead .sorting {
+    /*background-image: url("/o/Dynamic-ChangeMail-portlet/css/sort_both.png");*/
+    background-image:none!important;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+table.dataTable thead .sorting_desc {
+    /*background-image: url("/o/Dynamic-ChangeMail-portlet/css/sort_desc.png") !important;*/
+    background-image:none!important;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.typesBloc{
+    padding-left: 15px;
+    padding-right: 118px;
+}
+h4{
+    color: #283E86 !important;
+}
+:host ::ng-deep #tableDemandeType_length {
+    margin-top: -35px;
+}
+:host ::ng-deep  div.dataTables_wrapper div.dataTables_length select {
+    width: 106px;
+    display: inline-block;
+    margin-right: 17px;
+}

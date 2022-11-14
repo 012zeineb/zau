@@ -1,0 +1,172 @@
+<div class="panel-heading " id="headingOne" aria-expanded="true" data-toggle="collapse" href="#collapseOne"
+     aria-controls="collapseOne">
+    <h4 style="cursor: pointer;" class="panel-title recherche-cursor">
+        <a> <i class="fa fa-chevron-right"></i>
+            {{'admin.dynamic.form.search.title' | language}}
+        </a>
+    </h4>
+</div>
+
+<div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body">
+        <form  id="editMailForm" class="col-md-8 col-md-offset-2"
+               method="POST" #mailForm="ngForm"  enctype="multipart/form-data">
+
+            <div *ngIf="success==true" class="alert alert-success" style="color: green">
+                <i class="fa fa-check-circle resume-infopers-icon"></i>
+                {{'assure.change_password.success_message' | language}}
+            </div>
+
+
+
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="email">
+                            {{'assure.editPersonalDataForm.editPersonalDataForm.label.adresse_e_mail' | language}}
+                        </label>
+                        <input type="email" name="email" id="email" class="form-control"
+                               readonly="readonly" disabled [value]="currentUserMail"
+                        />
+                    </div>
+                </div>
+
+
+
+                    <div   class="col-sm-6">
+                        <div class="form-group">
+                            <label for="phone">
+                                {{'assure.editPersonalDataForm.editPersonalDataForm.label.numero_de_telephone'| language}}</label>
+                            <input type="text" id="phone" class="form-control" name="phone"
+                                  [value]="Phone" ] title="{{'assure.editPersonalDataForm.editPersonalDataForm.label.tele.info' | language}}" />
+                        </div>
+                    </div>
+
+            </div>
+
+
+
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="newEmail">{{'assure.editPersonalDataForm.editPersonalDataForm.label.nouvelle_e_mail'| language}}
+                            {{'com.owliance.portail.champs_obligatoire'}}</label>
+                        <input type="email" name="newEmail" id="newEmail" value="      "
+                               title="{{'assure.editPersonalDataForm.editPersonalDataForm.confirm.address.mail.info' | language}}"
+                               class="form-control"   [(ngModel)]="NewMail.newEmail" (ngModelChange)="emailError=false;emailPatternError=false;"
+                               pattern="^[a-z0-9A-Z._%+-]+@[a-z0-9A-Z.-]+\.[a-zA-Z]{2,4}$" minlength=5 maxlength=128 required
+                               #newEmail="ngModel">
+                        <div *ngIf="(emailError && !submitForm) || (!submitForm && emailPatternError)">
+                            <label class="error "
+                                   *ngIf="emailError ">
+                                {{'admin.dynamic.addMotif.bloc1.label.error.obligatoire' | language}}
+                            </label>
+                            <label class="error " *ngIf="!emailError && emailPatternError">
+                                {{'error.email.pattern' | language}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="confirmation">{{'assure.editPersonalDataForm.editPersonalDataForm.label.confirmer' | language}}
+{{'com.owliance.portail.champs_obligatoire' | language}}</label>
+                        <input type="email" name="confirmation" id="confirmation" value=""
+                  maxlength="128" required      ng-model="confirmationemail"       title="{{'assure.editPersonalDataForm.editPersonalDataForm.new.address.mail.info' | language}}"
+                               class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+
+
+            <p class="help-block">
+
+                {{'assure.AskRemboursement.demanderRemboursement.remboursementForm.info.requiredFields' | language}}
+            </p>
+
+
+            <div class="col-sm-6 center-text">
+                <div class="form-group">
+                    <button type="reset" id="cancelEditMail"
+                            class="cancel form_button form-control reset btn lbp-btn-formulaire"
+                            aria-hidden="true" (click)="resetForm();">
+                        <i class="fa fa-remove hide-span-icon"></i>
+                        {{'assure.editPersonalDataForm.editPersonalDataForm.bouton.annuler' |language}}
+                    </button>
+                </div>
+            </div>
+           <div class="col-sm-6 center-text">
+                <div class="form-group">
+                    <button
+                            class="form_button form-control btn submit lbp-btn-formulaire" id="valideChangeMail">
+                        <i class="fa fa-check hide-span-icon"></i>
+                        {{'assure.editPersonalDataForm.editPersonalDataForm.bouton.valider' |language}}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+    <div *ngIf="resume" class="col-md-8 col-md-offset-2">
+        <form id="resumePersonalInfo">
+            <h4 id="myModalLabel">${demandeDetails["page_title"]}</h4>
+            <fieldset>
+                <c:if test="${!empty demandeDetails['legend']}">
+                    <legend>${demandeDetails['legend']}</legend>
+                </c:if>
+                <div class="form-group alert alert-success">
+                    <i class="fa fa-check-circle resume-infopers-icon"></i>
+                    {{'assure.editPersonalDataForm.resumePage.resumePersonalInfo.succees' | language}}
+                </div>
+
+                <div class="col-md-8">
+                    <c:forEach items="${demandeDetails}" var="entry">
+                        <div class="row clearfix">
+                            <c:if
+                                    test="${entry.key!='legend' && entry.key!='page_title' && not empty entry.key}">
+                                <div class="form-group">
+                                    <label> <spring:message code="${entry.key}" /></label>
+                                    <p>
+                                        <c:out value="${entry.value}"></c:out>
+                                    </p>
+                                </div>
+                            </c:if>
+                        </div>
+                    </c:forEach>
+                </div>
+            </fieldset>
+            <br> <br>
+
+
+            <c:if test="${!configuration.resumePersonalInfoCloseBtnRight}">
+                <div class="col-sm-12" id="cancel-block-edit">
+                    <div class="form-group col-md-6">
+                        <button type="button" class="form-control btn reset" id="cancel"
+                                onclick="window.location.href=window.location.pathname">
+                            <span class="fa fa-remove"></span>
+                            {{'resumePage.resumePersonalInfo.bouton.fermer' | language }}
+                        </button>
+                    </div>
+                </div>
+            </c:if>
+
+            <c:if test="${configuration.resumePersonalInfoCloseBtnRight}">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6" style="float: right;">
+                        <button type="button" class="form-control btn reset" id="cancel"
+                                onclick="window.location.href=window.location.pathname">
+                            <span class="fa fa-remove"></span>
+                  {{'resumePage.resumePersonalInfo.bouton.fermer' | language}}
+                        </button>
+                    </div>
+                </div>
+            </c:if>
+
+        </form>
+    </div>
+

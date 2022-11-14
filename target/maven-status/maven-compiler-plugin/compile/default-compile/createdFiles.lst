@@ -1,0 +1,14 @@
+com\tessi\portail\dynamicForms\rest\RestFilter.class
+com\tessi\portail\dynamicForms\rest\RestFilter$RestServiceRequest.class
+com\tessi\portail\dynamicForms\AbstractAngularPortlet.class
+com\tessi\portail\dynamicForms\AngularPortletConfig.class
+com\tessi\portail\dynamicForms\DynamicFomrsPortlet.class
+com\tessi\portail\dynamicForms\model\Success.class
+com\tessi\portail\dynamicForms\rest\UtilsController.class
+com\tessi\portail\dynamicForms\Constants.class
+com\tessi\portail\dynamicForms\exception\ErrorCode.class
+com\tessi\portail\dynamicForms\rest\SecureRequestHandlerInterceptor.class
+com\tessi\portail\dynamicForms\rest\ApplicationExceptionControllerAdvice.class
+com\tessi\portail\dynamicForms\model\ErrorResponse.class
+com\tessi\portail\dynamicForms\rest\DynamicFormsController.class
+com\tessi\portail\dynamicForms\exception\ApplicationException.class
